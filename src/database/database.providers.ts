@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 
 export const databaseProviders = [
   {
-    provide: 'DATA_SOURCE',
+    provide: DataSource,
     inject: [ConfigService],
     useFactory: async (configService: ConfigService) => {
       const dataSource = new DataSource({
