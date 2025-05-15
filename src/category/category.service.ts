@@ -9,7 +9,8 @@ import { Repository } from 'typeorm';
 export class CategoryService {
   constructor(
     @InjectRepository(Category)
-    private readonly categoryRepository: Repository<Category>) {}
+    private readonly categoryRepository: Repository<Category>,
+  ) {}
 
   private checkId(id: number) {
     const category = this.categoryRepository.findOneBy({ id });
